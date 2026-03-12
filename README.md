@@ -53,7 +53,7 @@ A validation script compares results from the materialized view with results fro
 
 warehouse-performance-optimization/
 ├── docker/
-│   └── docker-compose.yml           # Infrastructure as Code (ClickHouse Server)
+│   └── docker-compose.yml           # ClickHouse Server Infrastructure
 ├── data/
 │   ├── yellow_tripdata_2023-01.parquet
 │   ├── yellow_tripdata_2023-02.parquet
@@ -62,15 +62,15 @@ warehouse-performance-optimization/
 │   ├── clickhouse_raw_schema.sql       # Baseline table definition
 │   ├── clickhouse_optimized_schema.sql # Partitioned & Sorted table definition
 │   ├── analytical_queries.sql          # Benchmark queries (Joins/Windows)
-│   └── materialized_view.sql           # Aggregation logic
+│   └── materialized_view.sql           # Pre-aggregation logic
 ├── scripts/
 │   ├── ingest_clickhouse.py            # Idempotent ClickHouse loader
 │   ├── ingest_duckdb.py                # DuckDB loader
 │   ├── benchmark.py                    # Performance comparison runner
 │   └── validate_mv.py                  # Correctness verification script
-├── .gitignore                          # Prevents uploading large data/DB files
+├── .gitignore                          # Excludes large data/DB files
 ├── requirements.txt                    # Python dependencies
-├── submission.yml                      # Automated evaluation config (Mandatory)
+├── submission.yml                      # Automated evaluation config
 └── README.md                           # Final Project Report
 
 ## 7. Setup and Execution
@@ -109,4 +109,5 @@ python scripts/validate_mv.py
 ## 8. Conclusion
 
 Applying partitioning, sorting keys, and materialized views in ClickHouse significantly reduces analytical query latency. The optimized design demonstrates how proper data warehouse modeling improves performance for large scale analytical workloads.
+
 

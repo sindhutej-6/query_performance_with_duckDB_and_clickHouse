@@ -1,0 +1,18 @@
+# Data files (Never upload these)
+data/*.parquet
+data/*.csv
+
+# Local Databases
+duckdb.db
+duckdb.db.wal
+
+# Python environment & cache
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+
+# OS specific files
+.DS_Store
+Thumbs.db

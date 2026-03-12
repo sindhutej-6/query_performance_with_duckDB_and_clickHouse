@@ -1,0 +1,6 @@
+clickhouse-connect
+duckdb
+pandas
+pyarrow
+numpy
+tqdm

@@ -1,0 +1,15 @@
+version: "1"
+
+setup:
+  - docker compose -f docker/docker-compose.yml up -d
+  - pip install clickhouse-connect duckdb pandas pyarrow
+
+ingest:
+  - python scripts/ingest_clickhouse.py
+  - python scripts/ingest_duckdb.py
+
+benchmark:
+  - python scripts/benchmark.py
+
+validation:
+  - python scripts/validate_mv.py
